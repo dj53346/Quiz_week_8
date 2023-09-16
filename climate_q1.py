@@ -1,5 +1,21 @@
+import sqlite3
 import matplotlib.pyplot as plt
-        
+
+# Connect to the database
+conn = sqlite3.connect("climate.db")
+cursor = conn.cursor()
+
+# Fetch data from the database and populate lists 
+cursor.execute("SELECT years, co2, temp FROM climate_data")
+rows = cursor.fetchall()
+for row in rows:
+    years.append(row[0])
+    co2.append(row[1])
+    temp.append(row[2])
+
+# Close the database connection
+conn.close()
+
 years = []
 co2 = []
 temp = []

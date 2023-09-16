@@ -1,6 +1,11 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
+data = pd.read_csv('climate.csv')
+
+x_values = data['Year (decade)']
+y_values = data['[CO2]']
+
 years = []
 co2 = []
 temp = []
